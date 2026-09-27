@@ -28,7 +28,6 @@ namespace Ping_Pong
             }
             if (CollReck && b.speedX > 0)
             {
-                Console.Write("It did");
                 b.speedX = -b.speedX;
                 b.x = r.x + r.Reket.Width + 1;
                 b.speedX += 10;
@@ -100,7 +99,6 @@ namespace Ping_Pong
                 }
                 if (CollReckR && b.speedX < 0)
                 {
-                    Console.WriteLine("It did");
                     b.speedX = -b.speedX;
                     b.x = r2.x - b.ball.Width - 1;
                     b.speedX += 10;

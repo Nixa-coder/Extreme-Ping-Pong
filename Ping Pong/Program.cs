@@ -50,6 +50,9 @@ namespace Ping_Pong
                     case GameState.Playing:
                         p1.Move(fps);
                         b.Moving(fps);
+                        p1.FireBall(b,fps);
+                        p1.FreezeBall(b, fps);
+                        p1.Barrier(b, fps);
 
                         if (isVSbot)
                         {
@@ -97,6 +100,7 @@ namespace Ping_Pong
 
                         b.Draw();
                         point.DrawPoints();
+                        p1.DrawBarrier();
                         break;
 
                 }

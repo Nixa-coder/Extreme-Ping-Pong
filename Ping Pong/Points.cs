@@ -54,6 +54,8 @@ namespace Ping_Pong
         {
             if (WentThrough)
             {
+                r.timer = 0;
+
                 b.x = 450;
                 b.y = 225;
 
@@ -68,6 +70,7 @@ namespace Ping_Pong
 
                 b.speedX = -newSpeed;
                 b.speedY = 200f;
+                b.color = Color.Yellow;
                 
 
                 
