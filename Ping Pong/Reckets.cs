@@ -8,7 +8,7 @@ namespace Ping_Pong
 {
     public class Reckets : IPowers
     {
-        
+
         public float speed = 350f;
         public float x;
         public float y;
@@ -18,11 +18,11 @@ namespace Ping_Pong
         public float cooldown;
         public float cooldownFreeze;
         public float cooldownBarrier;
-        
+
         public Texture2D Reket;
         public Rectangle r;
-        
-        
+
+
         public Reckets()
         {
             x = 100;
@@ -30,11 +30,11 @@ namespace Ping_Pong
             timerFreeze = 0;
             cooldown = 0;
             cooldownFreeze = 0;
-            
-            
+
+
             Reket = Raylib.LoadTexture("Reket.png");
             r = new Rectangle(x, y, Reket.Width, Reket.Height);
-           
+
         }
 
 
@@ -45,7 +45,7 @@ namespace Ping_Pong
 
         public void Move(float deltaTime)
         {
-            
+
 
             if (Raylib.IsKeyDown(KeyboardKey.W))
             {
@@ -58,12 +58,12 @@ namespace Ping_Pong
 
             r.X = x;
             r.Y = y;
-            
+
         }
 
         public void FireBall(Ball b, float deltaTime)
-        { 
-            if(cooldown > 0)
+        {
+            if (cooldown > 0)
             {
                 cooldown -= deltaTime;
             }
@@ -76,7 +76,7 @@ namespace Ping_Pong
                 {
                     b.speedX /= 2;
                     b.speedY /= 2;
-                    
+
 
                     b.color = Color.Yellow;
                 }
@@ -94,24 +94,24 @@ namespace Ping_Pong
 
         public void FreezeBall(Ball b, float deltaTime)
         {
-            if(cooldownFreeze > 0)
+            if (cooldownFreeze > 0)
             {
                 cooldownFreeze -= deltaTime;
             }
-            
-            if(timerFreeze > 0)
+
+            if (timerFreeze > 0)
             {
                 timerFreeze -= deltaTime;
-                if(timerFreeze <= 0)
+                if (timerFreeze <= 0)
                 {
                     b.speedX = b.oldSpeedX;
                     b.speedY = b.oldSpeedY;
                     b.color = Color.Yellow;
                 }
-                
+
             }
 
-            if(Raylib.IsKeyPressed(KeyboardKey.Q) && timerFreeze <= 0 && cooldownFreeze <= 0 && timer <= 0)
+            if (Raylib.IsKeyPressed(KeyboardKey.Q) && timerFreeze <= 0 && cooldownFreeze <= 0 && timer <= 0)
             {
                 b.oldSpeedX = b.speedX;
                 b.oldSpeedY = b.speedY;
@@ -128,12 +128,12 @@ namespace Ping_Pong
 
         public void Barrier(Ball b, float deltaTime)
         {
-            if(cooldownBarrier > 0)
+            if (cooldownBarrier > 0)
             {
                 cooldownBarrier -= deltaTime;
             }
 
-            if(timerBarrier > 0)
+            if (timerBarrier > 0)
             {
                 timerBarrier -= deltaTime;
 
@@ -145,7 +145,7 @@ namespace Ping_Pong
                     b.speedX = -b.speedX;
                 }
             }
-            
+
 
             if (Raylib.IsKeyPressed(KeyboardKey.R) && timerBarrier <= 0 && cooldownBarrier <= 0)
             {
@@ -156,60 +156,13 @@ namespace Ping_Pong
 
         public void DrawBarrier()
         {
-            if(timerBarrier > 0)
+            if (timerBarrier > 0)
             {
                 Raylib.DrawRectangle(20, 0, 20, 450, Color.White);
             }
-            
-        }
-
-    }
-
-
-    public class Recket2
-    {
-        public float speed = 350f;
-        public float x;
-        public float y;
-
-
-        public Texture2D Reket;
-        public Rectangle r;
-
-
-        public Recket2()
-        {
-            x = 800;
-            y = 225;
-
-
-            Reket = Raylib.LoadTexture("Reket.png");
-            r = new Rectangle(x, y, Reket.Width, Reket.Height);
 
         }
 
-
-        public void Draw()
-        {
-            Raylib.DrawTexture(Reket, (int)x, (int)y, Color.White);
-        }
-
-        public void Move(float deltaTime)
-        {
-
-
-            if (Raylib.IsKeyDown(KeyboardKey.Up))
-            {
-                y -= speed * deltaTime;
-            }
-            else if (Raylib.IsKeyDown(KeyboardKey.Down))
-            {
-                y += speed * deltaTime;
-            }
-
-            r.X = x;
-            r.Y = y;
-
-        }
     }
 }
+
