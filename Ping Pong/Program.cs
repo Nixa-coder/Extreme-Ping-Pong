@@ -50,8 +50,8 @@ namespace Ping_Pong
                     case GameState.Playing:
                         p1.Move(fps);
                         b.Moving(fps);
-                        p1.FireBall(b,fps);
-                        p1.FreezeBall(b, fps);
+                        p1.FireBall(b,fps, p2, p1);
+                        p1.FreezeBall(b, fps, p2, p1);
                         p1.Barrier(b, fps);
 
                         if (isVSbot)
@@ -61,8 +61,8 @@ namespace Ping_Pong
                         else
                         {
                             p2.Move(fps);
-                            p2.FireBall(b, fps);
-                            p2.FreezeBall(b, fps);
+                            p2.FireBall(b, fps, p2, p1);
+                            p2.FreezeBall(b, fps, p2, p1);
                             p2.Barrier(b, fps);
                         }
 

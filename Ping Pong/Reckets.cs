@@ -61,7 +61,7 @@ namespace Ping_Pong
 
         }
 
-        public void FireBall(Ball b, float deltaTime)
+        public void FireBall(Ball b, float deltaTime, Recket2 re, Reckets r)
         {
             if (cooldown > 0)
             {
@@ -83,7 +83,7 @@ namespace Ping_Pong
             }
 
 
-            if (Raylib.IsKeyPressed(KeyboardKey.E) && timer <= 0 && cooldown <= 0 && timerFreeze <= 0)
+            if (Raylib.IsKeyPressed(KeyboardKey.E) && timer <= 0 && cooldown <= 0 && timerFreeze <= 0 && re.timerFreezep2 <= 0 && re.timerFirep2 <= 0)
             {
                 b.speedX *= 2;
                 b.color = Color.Red;
@@ -92,7 +92,7 @@ namespace Ping_Pong
             }
         }
 
-        public void FreezeBall(Ball b, float deltaTime)
+        public void FreezeBall(Ball b, float deltaTime, Recket2 re, Reckets r)
         {
             if (cooldownFreeze > 0)
             {
@@ -111,7 +111,7 @@ namespace Ping_Pong
 
             }
 
-            if (Raylib.IsKeyPressed(KeyboardKey.Q) && timerFreeze <= 0 && cooldownFreeze <= 0 && timer <= 0)
+            if (Raylib.IsKeyPressed(KeyboardKey.Q) && timerFreeze <= 0 && cooldownFreeze <= 0 && timer <= 0 && re.timerFirep2 <= 0 && re.timerFreezep2 <= 0)
             {
                 b.oldSpeedX = b.speedX;
                 b.oldSpeedY = b.speedY;
