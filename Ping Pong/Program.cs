@@ -53,6 +53,7 @@ namespace Ping_Pong
                         p1.FireBall(b,fps, p2, p1);
                         p1.FreezeBall(b, fps, p2, p1);
                         p1.Barrier(b, fps);
+                        p1.TurnAround(b, fps);
 
                         if (isVSbot)
                         {
@@ -64,6 +65,7 @@ namespace Ping_Pong
                             p2.FireBall(b, fps, p2, p1);
                             p2.FreezeBall(b, fps, p2, p1);
                             p2.Barrier(b, fps);
+                            p2.TurnAround(b, fps);
                         }
 
                         c.Collision(p1, b, p2, ai, isVSbot);
@@ -80,8 +82,10 @@ namespace Ping_Pong
                 switch (currentState)
                 {
                     case GameState.MainMenu:
-                        Raylib.DrawText("Extreme Ping Pong", 250, 150, 40, Color.White);
-                        Raylib.DrawText("Press [ENTER] or [SPACE] to PLAY", 250, 250, 20, Color.Yellow);
+                        Raylib.DrawText("Extreme Ping Pong", 250, 150, 40, Color.Red);
+                        Raylib.DrawText("Press [ENTER] or [SPACE] to PLAY", 250, 250, 20, Color.White);
+                        Raylib.DrawText("Commands for P1: [E]FireBall [Q]FreezeBall [R]Barrier [F]TurnBall", 115, 300, 20, Color.Orange);
+                        Raylib.DrawText("Commands for P2: [Left]FireBall [Right]FreezeBall [R.Shift]Barrier [Enter]TurnBall", 30, 330, 20, Color.Green);
                         break;
 
                     case GameState.ModeSelect:

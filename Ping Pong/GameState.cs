@@ -17,6 +17,7 @@ namespace Ping_Pong
         void FreezeBall(Ball b, float deltaTime, Recket2 re, Reckets r);
         void Barrier(Ball b, float deltaTime);
 
+        void TurnAround(Ball b, float deltaTime);
         void DrawBarrier();
 
     }

@@ -15,9 +15,11 @@ namespace Ping_Pong
         public float timer;
         public float timerFreeze;
         public float timerBarrier;
+
         public float cooldown;
         public float cooldownFreeze;
         public float cooldownBarrier;
+        public float cooldownTurn;
 
         public Texture2D Reket;
         public Rectangle r;
@@ -30,7 +32,7 @@ namespace Ping_Pong
             timerFreeze = 0;
             cooldown = 0;
             cooldownFreeze = 0;
-
+            cooldownTurn = 0;
 
             Reket = Raylib.LoadTexture("Reket.png");
             r = new Rectangle(x, y, Reket.Width, Reket.Height);
@@ -163,6 +165,19 @@ namespace Ping_Pong
 
         }
 
+        public void TurnAround(Ball b, float deltaTime)
+        {
+            if(cooldownTurn > 0)
+            {
+                cooldownTurn -= deltaTime;
+            }
+
+            if(Raylib.IsKeyPressed(KeyboardKey.F) && cooldownTurn <= 0 && b.speedX > 0)
+            {
+                b.speedX = -b.speedX;
+                cooldownTurn = 15.0f;
+            }
+        }
     }
 }
 

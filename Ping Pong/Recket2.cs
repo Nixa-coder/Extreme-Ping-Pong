@@ -14,6 +14,8 @@ namespace Ping_Pong
         public float cooldownFirep2;
         public float cooldownFreezep2;
         public float cooldownBarrierp2;
+        public float cooldownTurn;
+
         public float timerFirep2;
         public float timerFreezep2;
         public float timerBarrierp2;
@@ -158,6 +160,21 @@ namespace Ping_Pong
                 Raylib.DrawRectangle(860, 0, 20, 450, Color.Violet);
             }
 
+        }
+
+        public void TurnAround(Ball b, float deltaTime)
+        {
+            if(cooldownTurn > 0)
+            {
+                cooldownTurn -= deltaTime;
+            }
+
+
+            if(Raylib.IsKeyPressed(KeyboardKey.Enter) && cooldownTurn <= 0 && b.speedX < 0)
+            {
+                b.speedX = -b.speedX;
+                cooldownTurn = 15.0f;
+            }
         }
     }
 }
