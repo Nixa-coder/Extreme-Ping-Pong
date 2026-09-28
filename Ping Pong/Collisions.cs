@@ -32,14 +32,15 @@ namespace Ping_Pong
                 b.x = r.x + r.Reket.Width + 1;
                 b.speedX += 10;
 
-                if (b.speedY >= 0)
-                {
-                    b.speedY += 10f;
-                }
-                else
-                {
-                    b.speedY -= 10f;
-                }
+                float centerp1 = r.y + (r.Reket.Height / 2);
+                float offset = (b.y + (b.ball.Height / 2)) - centerp1;
+
+                float hit = offset / (r.Reket.Height / 2);
+
+                b.speedY = -hit * b.speed;
+                
+
+                
             }
 
 
@@ -102,14 +103,13 @@ namespace Ping_Pong
                     b.speedX = -b.speedX;
                     b.x = r2.x - b.ball.Width - 1;
                     b.speedX += 10;
-                    if (b.speedY >= 0)
-                    {
-                        b.speedY += 10f;
-                    }
-                    else
-                    {
-                        b.speedY -= 10f;
-                    }
+
+                    float centerp2 = r2.y + (r2.Reket.Height / 2);
+                    float offset = (b.y + (b.ball.Height / 2)) - centerp2;
+
+                    float hit = offset / (r2.Reket.Height / 2);
+
+                    b.speedY = hit * b.speed;
                 }
             }
         }

@@ -61,10 +61,14 @@ namespace Ping_Pong
                         else
                         {
                             p2.Move(fps);
+                            p2.FireBall(b, fps);
+                            p2.FreezeBall(b, fps);
+                            p2.Barrier(b, fps);
                         }
 
                         c.Collision(p1, b, p2, ai, isVSbot);
                         point.Point(b, p1, p2, ai);
+                        
                         break;
 
                 }
@@ -96,11 +100,13 @@ namespace Ping_Pong
                         else
                         {
                             p2.Draw();
+                            p2.DrawBarrier();
                         }
 
                         b.Draw();
                         point.DrawPoints();
                         p1.DrawBarrier();
+                        
                         break;
 
                 }

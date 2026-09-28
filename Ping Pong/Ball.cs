@@ -12,6 +12,7 @@ namespace Ping_Pong
         public float y;
         public float speedX;
         public float speedY;
+        public float speed;
 
         public float oldSpeedX;
         public float oldSpeedY;
@@ -27,6 +28,7 @@ namespace Ping_Pong
             y = 225;
             speedX = 200f;
             speedY = 200f;
+            speed = 250f;
             ball = Raylib.LoadTexture("Ball.png");
             radius = ball.Width / 2f;
             color = Color.Yellow;

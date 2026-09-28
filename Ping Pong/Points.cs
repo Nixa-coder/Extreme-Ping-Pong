@@ -54,7 +54,22 @@ namespace Ping_Pong
         {
             if (WentThrough)
             {
+                //timers
                 r.timer = 0;
+                r.timerBarrier = 0;
+                r.timerFreeze = 0;
+
+                r2.timerFirep2 = 0;
+                r2.timerFreezep2 = 0;
+                r2.timerBarrierp2 = 0;
+                //cooldowns
+                r.cooldown = 0;
+                r.cooldownBarrier = 0;
+                r.cooldownFreeze = 0;
+
+                r2.cooldownFreezep2 = 0;
+                r2.cooldownFirep2 = 0;
+                r2.cooldownBarrierp2 = 0;
 
                 b.x = 450;
                 b.y = 225;
