@@ -140,7 +140,7 @@ namespace Ping_Pong
                 Rectangle barrier = new Rectangle(20, 0, 20, 450);
                 bool Shield = Raylib.CheckCollisionCircleRec(b.center, b.radius, barrier);
 
-                if (Shield)
+                if (Shield && b.speedX > 0)
                 {
                     b.speedX = -b.speedX;
                 }
@@ -158,7 +158,7 @@ namespace Ping_Pong
         {
             if (timerBarrier > 0)
             {
-                Raylib.DrawRectangle(20, 0, 20, 450, Color.White);
+                Raylib.DrawRectangle(20, 0, 20, 450, Color.Violet);
             }
 
         }

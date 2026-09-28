@@ -86,7 +86,7 @@ namespace Ping_Pong
                 b.speedX *= 2;
                 b.color = Color.Red;
                 timerFirep2 = 2.0f;
-                cooldownFreezep2 = 5;
+                cooldownFirep2 = 5;
             }
         }
         public void FreezeBall(Ball b, float deltaTime, Recket2 re, Reckets r)
@@ -137,7 +137,7 @@ namespace Ping_Pong
                 Rectangle barrier = new Rectangle(860, 0, 20, 450);
                 bool Shield = Raylib.CheckCollisionCircleRec(b.center, b.radius, barrier);
 
-                if (Shield)
+                if (Shield && b.speedX < 0)
                 {
                     b.speedX = -b.speedX;
                 }

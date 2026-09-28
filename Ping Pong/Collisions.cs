@@ -37,10 +37,19 @@ namespace Ping_Pong
 
                 float hit = offset / (r.Reket.Height / 2);
 
-                b.speedY = -hit * b.speed;
-                
 
-                
+                if (hit > 0)
+                {
+                    // Donja polovica reketa -> loptica MORA ići dolje
+                    b.speedY = -Math.Max(Math.Abs(hit * b.speed), 100f);
+                }
+                else if (hit < 0)
+                {
+                    // Gornja polovica reketa -> loptica MORA ići gore
+                    b.speedY = Math.Max(Math.Abs(hit * b.speed), 100f);
+                }
+
+
             }
 
 
@@ -109,7 +118,16 @@ namespace Ping_Pong
 
                     float hit = offset / (r2.Reket.Height / 2);
 
-                    b.speedY = hit * b.speed;
+                    if (hit > 0)
+                    {
+                        // Donja polovica reketa -> loptica MORA ići dolje
+                        b.speedY = -Math.Max(Math.Abs(hit * 250f), 100f);
+                    }
+                    else if (hit < 0)
+                    {
+                        // Gornja polovica reketa -> loptica MORA ići gore
+                        b.speedY = Math.Max(Math.Abs(hit * 250f), 100f);
+                    }
                 }
             }
         }
