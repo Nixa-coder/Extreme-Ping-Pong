@@ -40,13 +40,13 @@ namespace Ping_Pong
 
                 if (hit > 0)
                 {
-                    // Donja polovica reketa -> loptica MORA ići dolje
                     b.speedY = -Math.Max(Math.Abs(hit * b.speed), 100f);
+                    b.speed += 10;
                 }
                 else if (hit < 0)
                 {
-                    // Gornja polovica reketa -> loptica MORA ići gore
                     b.speedY = Math.Max(Math.Abs(hit * b.speed), 100f);
+                    b.speed += 10;
                 }
 
 
@@ -120,13 +120,13 @@ namespace Ping_Pong
 
                     if (hit > 0)
                     {
-                        // Donja polovica reketa -> loptica MORA ići dolje
                         b.speedY = -Math.Max(Math.Abs(hit * 250f), 100f);
+                        b.speed += 10;
                     }
                     else if (hit < 0)
                     {
-                        // Gornja polovica reketa -> loptica MORA ići gore
                         b.speedY = Math.Max(Math.Abs(hit * 250f), 100f);
+                        b.speed += 10;
                     }
                 }
             }

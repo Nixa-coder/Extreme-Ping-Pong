@@ -85,6 +85,7 @@ namespace Ping_Pong
 
                 b.speedX = -newSpeed;
                 b.speedY = 200f;
+                b.speed = 200f;
                 b.color = Color.Yellow;
                 
 
