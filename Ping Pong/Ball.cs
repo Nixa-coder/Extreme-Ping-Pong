@@ -55,9 +55,9 @@ namespace Ping_Pong
                 speedY = -speedY;
             }
 
-            if (y + ball.Height >= 450)
+            if (y + ball.Height >= 380)
             {
-                y = 450 - ball.Height;
+                y = 380 - ball.Height;
                 speedY = -speedY;
             }
             

@@ -22,9 +22,9 @@ namespace Ping_Pong
             {
                 r.y = 0;
             }
-            if (r.y + r.Reket.Height >= 450)
+            if (r.y + r.Reket.Height >= 380)
             {
-                r.y = 450 - r.Reket.Height;
+                r.y = 380 - r.Reket.Height;
             }
             if (CollReck && b.speedX > 0)
             {
@@ -103,9 +103,9 @@ namespace Ping_Pong
                 {
                     r2.y = 0;
                 }
-                if (r2.y + r2.Reket.Height >= 450)
+                if (r2.y + r2.Reket.Height >= 380)
                 {
-                    r2.y = 450 - r2.Reket.Height;
+                    r2.y = 380 - r2.Reket.Height;
                 }
                 if (CollReckR && b.speedX < 0)
                 {

@@ -93,6 +93,7 @@ namespace Ping_Pong
                 cooldown = 5;
             }
         }
+        
 
         public void FreezeBall(Ball b, float deltaTime, Recket2 re, Reckets r)
         {
@@ -127,6 +128,7 @@ namespace Ping_Pong
                 b.color = Color.Blue;
             }
         }
+        
 
         public void Barrier(Ball b, float deltaTime)
         {
@@ -139,7 +141,7 @@ namespace Ping_Pong
             {
                 timerBarrier -= deltaTime;
 
-                Rectangle barrier = new Rectangle(20, 0, 20, 450);
+                Rectangle barrier = new Rectangle(20, 0, 20, 380);
                 bool Shield = Raylib.CheckCollisionCircleRec(b.center, b.radius, barrier);
 
                 if (Shield && b.speedX > 0)
@@ -160,10 +162,11 @@ namespace Ping_Pong
         {
             if (timerBarrier > 0)
             {
-                Raylib.DrawRectangle(20, 0, 20, 450, Color.Violet);
+                Raylib.DrawRectangle(20, 0, 20, 379, Color.Violet);
             }
 
         }
+        
 
         public void TurnAround(Ball b, float deltaTime)
         {
@@ -178,6 +181,7 @@ namespace Ping_Pong
                 cooldownTurn = 15.0f;
             }
         }
+        
     }
 }
 
