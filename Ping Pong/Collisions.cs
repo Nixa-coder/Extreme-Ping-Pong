@@ -64,9 +64,9 @@ namespace Ping_Pong
                 {
                     ai.y = 0;
                 }
-                if (ai.y + ai.reket.Height >= 450)
+                if (ai.y + ai.reket.Height >= 380)
                 {
-                    ai.y = 450 - ai.reket.Height;
+                    ai.y = 380 - ai.reket.Height;
                 }
 
                 if (CollReckAI && b.speedX < 0)

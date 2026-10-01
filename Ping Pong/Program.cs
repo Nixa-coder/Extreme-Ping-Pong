@@ -16,25 +16,10 @@ namespace Ping_Pong
             Collisions c = new Collisions();
             Points point = new Points();
             AIReket ai = new AIReket();
+            ShowCD s = new ShowCD();
             
 
-            Vector2 firepicpos = new Vector2(20, 400);
-            Texture2D fire = Raylib.LoadTexture("Fire.png");
-            Raylib.SetTextureFilter(fire, TextureFilter.Point);
-
-
-            Vector2 freezepicpos = new Vector2(65, 395);
-            Texture2D freeze = Raylib.LoadTexture("Freeze.png");
-            Raylib.SetTextureFilter(freeze, TextureFilter.Point);
-
-
-            Vector2 barrierpicpos = new Vector2(115, 395);
-            Texture2D barrier = Raylib.LoadTexture("Barrier.png");
-            Raylib.SetTextureFilter(barrier, TextureFilter.Point);
-
-            Vector2 turnaroundpicpos = new Vector2(160, 400);
-            Texture2D turnaround = Raylib.LoadTexture("TurnAround.png");
-            Raylib.SetTextureFilter(turnaround, TextureFilter.Point);
+            
 
             GameState currentState = GameState.MainMenu;
             bool isVSbot = false;
@@ -118,42 +103,7 @@ namespace Ping_Pong
                     case GameState.Playing:
                         p1.Draw();
                         Raylib.DrawLine(0, 380, 900, 380, Color.White);
-                        if(p1.cooldown <= 0)
-                        {
-                            Raylib.DrawTextureEx(fire, firepicpos, 0, 2f, Color.White);
-                        }
-                        else
-                        {
-                            Raylib.DrawTextureEx(fire, firepicpos, 0, 2f, Color.Gray);
-                            Raylib.DrawText($"{p1.cooldown:F1}", (int)firepicpos.X + 5, (int)firepicpos.Y + 6, 15, Color.White);
-                        }
-                        if(p1.cooldownFreeze <= 0)
-                        {
-                            Raylib.DrawTextureEx(freeze, freezepicpos, 0, 1.5f, Color.White);
-                        }
-                        else
-                        {
-                            Raylib.DrawTextureEx(freeze, freezepicpos, 0, 1.5f, Color.Gray);
-                            Raylib.DrawText($"{p1.cooldownFreeze:F1}", (int)freezepicpos.X + 7, (int)freezepicpos.Y + 9, 15, Color.White);
-                        }
-                        if(p1.cooldownBarrier <= 0)
-                        {
-                            Raylib.DrawTextureEx(barrier, barrierpicpos, 0, 1.5f, Color.White);
-                        }
-                        else
-                        {
-                            Raylib.DrawTextureEx(barrier, barrierpicpos, 0, 1.5f, Color.Gray);
-                            Raylib.DrawText($"{p1.cooldownBarrier:F1}", (int)barrierpicpos.X + 5, (int)barrierpicpos.Y + 7, 15, Color.White);
-                        }
-                        if(p1.cooldownTurn <= 0)
-                        {
-                            Raylib.DrawTextureEx(turnaround, turnaroundpicpos, 0, 1.5f, Color.White);
-                        }
-                        else
-                        {
-                            Raylib.DrawTextureEx(turnaround, turnaroundpicpos, 0, 1.5f, Color.Gray);
-                            Raylib.DrawText($"{p1.cooldownTurn:F1}", (int)turnaroundpicpos.X + 5, (int)turnaroundpicpos.Y + 6, 15, Color.White);
-                        }
+                        s.ShowCDP1(p1);
 
                         
 
@@ -181,10 +131,10 @@ namespace Ping_Pong
 
             Raylib.UnloadTexture(p1.Reket);
             Raylib.UnloadTexture(p2.Reket);
-            Raylib.UnloadTexture(fire);
-            Raylib.UnloadTexture(freeze);
-            Raylib.UnloadTexture(barrier);
-            Raylib.UnloadTexture(turnaround);
+            Raylib.UnloadTexture(s.fire);
+            Raylib.UnloadTexture(s.freeze);
+            Raylib.UnloadTexture(s.barrier);
+            Raylib.UnloadTexture(s.turnaround);
             Raylib.UnloadTexture(b.ball);
             Raylib.CloseWindow();
         }
