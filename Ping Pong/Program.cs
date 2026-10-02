@@ -110,11 +110,15 @@ namespace Ping_Pong
                         if (isVSbot)
                         {
                             ai.DrawAI();
+                            Raylib.DrawLine(280, 380, 280, 450, Color.White);
                         }
                         else
                         {
                             p2.Draw();
                             p2.DrawBarrier();
+                            s.ShowCDP2(p2);
+                            Raylib.DrawLine(280, 380, 280, 450, Color.White);
+                            Raylib.DrawLine(600, 380, 600, 450, Color.White);
                         }
 
                         b.Draw();

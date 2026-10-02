@@ -46,7 +46,7 @@ namespace Ping_Pong
 
         public void DrawPoints()
         {
-            Raylib.DrawText($"{point1} : {point2}", Width / 2 - 30, 0, 20, Color.White);
+            Raylib.DrawText($"{point1} : {point2}", Width / 2 - 45, 10, 30, Color.White);
         }
 
 
