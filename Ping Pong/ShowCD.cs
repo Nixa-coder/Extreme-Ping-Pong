@@ -45,7 +45,10 @@ namespace Ping_Pong
         
         public void ShowCDP1(Reckets p1)
         {
-            
+            Raylib.DrawText("E", (int)firepicpos.X - 5, (int)firepicpos.Y - 9, 15, Color.White);
+            Raylib.DrawText("Q", (int)freezepicpos.X - 5, (int)freezepicpos.Y - 7, 15, Color.White);
+            Raylib.DrawText("R", (int)barrierpicpos.X - 10, (int)barrierpicpos.Y - 7, 15, Color.White);
+            Raylib.DrawText("F", (int)turnaroundpicpos.X - 5, (int)turnaroundpicpos.Y - 10, 15,  Color.White);
             if (p1.cooldown <= 0)
             {
                 Raylib.DrawTextureEx(fire, firepicpos, 0, 3f, Color.White);
@@ -57,6 +60,7 @@ namespace Ping_Pong
             }
             if (p1.cooldownFreeze <= 0)
             {
+
                 Raylib.DrawTextureEx(freeze, freezepicpos, 0, 2.1f, Color.White);
             }
             else
@@ -86,6 +90,10 @@ namespace Ping_Pong
 
         public void ShowCDP2(Recket2 p2)
         {
+            Raylib.DrawText("<", (int)firepicpos2.X - 5, (int)firepicpos2.Y - 11, 20, Color.White);
+            Raylib.DrawText(">", (int)freezepicpos2.X - 5, (int)freezepicpos2.Y - 7, 20, Color.White);
+            Raylib.DrawText("Shift", (int)barrierpicpos2.X - 32, (int)barrierpicpos2.Y - 7, 15, Color.White);
+            Raylib.DrawText("Enter", (int)turnaroundpicpos2.X - 32, (int)turnaroundpicpos2.Y - 10, 15, Color.White);
             if (p2.cooldownFirep2 <= 0)
             {
                 Raylib.DrawTextureEx(fire, firepicpos2, 0, 3f, Color.White);

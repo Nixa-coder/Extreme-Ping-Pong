@@ -10,6 +10,9 @@ namespace Ping_Pong
             
             Raylib.InitWindow(900, 450, "Ping Pong");
             Raylib.SetTargetFPS(60);
+            Image Icon = Raylib.LoadImage("Icon.png");
+            Raylib.SetWindowIcon(Icon);
+
             Reckets p1 = new Reckets();
             Recket2 p2 = new Recket2();
             Ball b = new Ball();
@@ -140,6 +143,7 @@ namespace Ping_Pong
             Raylib.UnloadTexture(s.barrier);
             Raylib.UnloadTexture(s.turnaround);
             Raylib.UnloadTexture(b.ball);
+            Raylib.UnloadImage(Icon);
             Raylib.CloseWindow();
         }
 
